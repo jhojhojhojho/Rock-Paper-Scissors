@@ -1,13 +1,15 @@
-window.addEventListener('DOMContentLoaded', () => {
 
-const rock = document.getElementById('rock-button')
-const paper = document.getElementById('paper-button')
-const scissors = document.getElementById('scissors-button')
 
-// let choices = {Rock: "Scissors", Paper: "Rock" , Scissors: "Paper"}
+// window.addEventListener('DOMContentLoaded', () => {
+
+// const rock = document.getElementById('rock-button')
+// const paper = document.getElementById('paper-button')
+// const scissors = document.getElementById('scissors-button')
+
+let choices = {Rock: "Scissors", Paper: "Rock" , Scissors: "Paper"}
 
 const outcomes = function (player, computer) {
-    if(computer === player){
+    if(randomOutcome(choice) === player){
         //add event listeners for the clicks
         return "it's a tie"
     }
@@ -17,21 +19,24 @@ const outcomes = function (player, computer) {
     return "Computer wins"
 }
 
-rock.addEventListener('click', () => {
-    outcomes()
-})
-
-
-
-
-
-
-console.log(outcomes(choices.Rock, choices.Rock)) //tie
+// rock.addEventListener('click', () => {
+//     outcomes()
+// })
+// console.log(outcomes(choices.Rock, choices.Rock)) //tie
 // console.log(outcomes(choices.Paper, choices.Scissors)) //computer
 // console.log(outcomes( choices.Rock, choices.Scissors)) //player
 
-const randomOutcome = function (computer){
+// let choices = {Rock: "Scissors", Paper: "Rock" , Scissors: "Paper"}
 
+const randomOutcome = function (choices){
+    const computerChoice = Math.floor(Math.random() * Math.floor(3));
+
+    if(computerChoice === 0) return choices.Scissors
+    if(computerChoice === 1) return choices.Rock
+    if(computerChoice === 2) return choices.Paper
 }
+// console.log(randomOutcome(choices))
 
-})
+
+
+// })
